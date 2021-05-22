@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
  */
 public class DevelopmentCardInfo extends javax.swing.JFrame {
 
-    AveryJButton closeButtonR1, closeButtonR2, closeButtonR3,
+    AvaJButton closeButtonR1, closeButtonR2, closeButtonR3,
             closeButtonR4, closeButtonR5, closeButtonR6,closeButtonR7;
     /** Creates new form DevelopmentCardInfo */
     public DevelopmentCardInfo(int card) {
@@ -55,13 +55,13 @@ public class DevelopmentCardInfo extends javax.swing.JFrame {
             case 7: jPanel7.setVisible(true);
                 break;
         }
-        closeButtonR1 = new AveryJButton(closeButton1);
-        closeButtonR2 = new AveryJButton(closeButton2);
-        closeButtonR3 = new AveryJButton(closeButton3);
-        closeButtonR4 = new AveryJButton(closeButton4);
-        closeButtonR5 = new AveryJButton(closeButton5);
-        closeButtonR6 = new AveryJButton(closeButton6);
-        closeButtonR7 = new AveryJButton(closeButton7);
+        closeButtonR1 = new AvaJButton(closeButton1);
+        closeButtonR2 = new AvaJButton(closeButton2);
+        closeButtonR3 = new AvaJButton(closeButton3);
+        closeButtonR4 = new AvaJButton(closeButton4);
+        closeButtonR5 = new AvaJButton(closeButton5);
+        closeButtonR6 = new AvaJButton(closeButton6);
+        closeButtonR7 = new AvaJButton(closeButton7);
     }
     public DevelopmentCardInfo(){
         initComponents();

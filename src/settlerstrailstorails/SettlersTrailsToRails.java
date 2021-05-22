@@ -2,7 +2,7 @@ package settlerstrailstorails;
 
 /**
  * 
- * @author Avery Thorn
+ * @author Ava Thorn
  */
 public class SettlersTrailsToRails{
     /**

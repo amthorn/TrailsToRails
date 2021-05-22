@@ -28,7 +28,7 @@ public class developmentCardWindow extends javax.swing.JFrame {
     ArrayList<DevelopmentCard> dpCards;
     int card1, card2, card3, card4, card5, card6, card7, panel1,panel2,
             panel3,panel4,panel5,panel6,panel7;
-    AveryJButton cardOneInfoButton,cardOnePlayButton,cardTwoInfoButton,
+    AvaJButton cardOneInfoButton,cardOnePlayButton,cardTwoInfoButton,
             cardTwoPlayButton,cardThreeInfoButton,cardThreePlayButton,
             cardFourInfoButton,cardFourPlayButton,cardFiveInfoButton,
             cardFivePlayButton,cardSixInfoButton,cardSixPlayButton,
@@ -52,21 +52,21 @@ public class developmentCardWindow extends javax.swing.JFrame {
         }catch(Exception e){
             
         }
-        cardOneInfoButton = new AveryJButton(cardOneInfoButton1);
-        cardOnePlayButton = new AveryJButton(cardOnePlayButton1);
-        cardTwoInfoButton = new AveryJButton(cardTwoInfoButton1);
-        cardTwoPlayButton = new AveryJButton(cardTwoPlayButton1);
-        cardThreeInfoButton = new AveryJButton(cardThreeInfoButton1);
-        cardThreePlayButton = new AveryJButton(cardThreePlayButton1);
-        cardFourInfoButton = new AveryJButton(cardFourInfoButton1);
-        cardFourPlayButton = new AveryJButton(cardFourPlayButton1);
-        cardFiveInfoButton = new AveryJButton(cardFiveInfoButton1);
-        cardFivePlayButton = new AveryJButton(cardFivePlayButton1);
-        cardSixInfoButton = new AveryJButton(cardSixInfoButton1);
-        cardSixPlayButton = new AveryJButton(cardSixPlayButton1);
-        cardSevenInfoButton = new AveryJButton(cardSevenInfoButton1);
-        cardSevenPlayButton = new AveryJButton(cardSevenPlayButton1);
-        xButton1 = new AveryJButton(xButton);
+        cardOneInfoButton = new AvaJButton(cardOneInfoButton1);
+        cardOnePlayButton = new AvaJButton(cardOnePlayButton1);
+        cardTwoInfoButton = new AvaJButton(cardTwoInfoButton1);
+        cardTwoPlayButton = new AvaJButton(cardTwoPlayButton1);
+        cardThreeInfoButton = new AvaJButton(cardThreeInfoButton1);
+        cardThreePlayButton = new AvaJButton(cardThreePlayButton1);
+        cardFourInfoButton = new AvaJButton(cardFourInfoButton1);
+        cardFourPlayButton = new AvaJButton(cardFourPlayButton1);
+        cardFiveInfoButton = new AvaJButton(cardFiveInfoButton1);
+        cardFivePlayButton = new AvaJButton(cardFivePlayButton1);
+        cardSixInfoButton = new AvaJButton(cardSixInfoButton1);
+        cardSixPlayButton = new AvaJButton(cardSixPlayButton1);
+        cardSevenInfoButton = new AvaJButton(cardSevenInfoButton1);
+        cardSevenPlayButton = new AvaJButton(cardSevenPlayButton1);
+        xButton1 = new AvaJButton(xButton);
         this.dpCards=dpCards;
         JPanel[] cardPanel = new JPanel[7];
         cardPanel[0]=cardPanel1;

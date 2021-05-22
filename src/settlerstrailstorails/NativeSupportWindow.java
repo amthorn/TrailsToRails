@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
  */
 public class NativeSupportWindow extends javax.swing.JFrame {
     
-    AveryJButton twoButton,threeButton,fourButton,fiveButton,sixButton,
+    AvaJButton twoButton,threeButton,fourButton,fiveButton,sixButton,
             sevenButton,eightButton,nineButton,tenButton,elevenButton,
             twelveButton;
     gameFrame game_Frame;
@@ -36,17 +36,17 @@ public class NativeSupportWindow extends javax.swing.JFrame {
             
         }
         game_Frame=g;
-        twoButton=new AveryJButton(twoButton1);
-        threeButton=new AveryJButton(threeButton1);
-        fourButton=new AveryJButton(fourButton1);
-        fiveButton=new AveryJButton(fiveButton1);
-        sixButton=new AveryJButton(sixButton1);
-        sevenButton=new AveryJButton(sevenButton1);
-        eightButton=new AveryJButton(eightButton1);
-        nineButton=new AveryJButton(nineButton1);
-        tenButton=new AveryJButton(tenButton1);
-        elevenButton=new AveryJButton(elevenButton1);
-        twelveButton=new AveryJButton(twelveButton1);
+        twoButton=new AvaJButton(twoButton1);
+        threeButton=new AvaJButton(threeButton1);
+        fourButton=new AvaJButton(fourButton1);
+        fiveButton=new AvaJButton(fiveButton1);
+        sixButton=new AvaJButton(sixButton1);
+        sevenButton=new AvaJButton(sevenButton1);
+        eightButton=new AvaJButton(eightButton1);
+        nineButton=new AvaJButton(nineButton1);
+        tenButton=new AvaJButton(tenButton1);
+        elevenButton=new AvaJButton(elevenButton1);
+        twelveButton=new AvaJButton(twelveButton1);
     }
     NativeSupportWindow(){
         initComponents();

@@ -38,7 +38,7 @@ public class TradeWindow extends javax.swing.JFrame {
             giveLumber=0,giveCoal=0,giveCattle=0,giveWheat=0,giveOre=0,giveGold=0;
     ImageIcon gold,lumber,coal,ore,wheat,cattle,smallGold;
     Player currPlayer;
-    AveryJButton tradeButton,xButton,lumberPlayerGetButton,coalPlayerGetButton,
+    AvaJButton tradeButton,xButton,lumberPlayerGetButton,coalPlayerGetButton,
             cattlePlayerGetButton,orePlayerGetButton,wheatPlayerGetButton,
             goldPlayerGetButton,lumberPlayerGiveButton,coalPlayerGiveButton,
             cattlePlayerGiveButton,orePlayerGiveButton,wheatPlayerGiveButton,
@@ -50,7 +50,7 @@ public class TradeWindow extends javax.swing.JFrame {
         initComponents();
         game_Frame=g;
         currPlayer=p;
-        tradeButton = new AveryJButton(tradeButton1);
+        tradeButton = new AvaJButton(tradeButton1);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(((dim.width/2)-(this.getSize().width/2)), ((dim.height/2)-((this.getSize().height/2)+20)));
         try{
@@ -67,27 +67,27 @@ public class TradeWindow extends javax.swing.JFrame {
         smallGold=new ImageIcon(makeColorTransparent("/settlerstrailstorails/resources/gold.png", Color.WHITE));
         goldLabelPlayerGive.setIcon(smallGold);
         goldLabelPlayerGet.setIcon(smallGold);
-        clearGetButton = new AveryJButton(clearGetButton1);
-        clearGiveButton = new AveryJButton(clearGiveButton1);
-        lumberPlayerGiveButton = new AveryJButton(lumberPlayerGiveButton1);
-        coalPlayerGiveButton = new AveryJButton(coalPlayerGiveButton1);
-        cattlePlayerGiveButton = new AveryJButton(cattlePlayerGiveButton1);
-        wheatPlayerGiveButton = new AveryJButton(wheatPlayerGiveButton1);
-        orePlayerGiveButton = new AveryJButton(orePlayerGiveButton1);
-        goldPlayerGiveButton = new AveryJButton(goldPlayerGiveButton1);
-        lumberPlayerGetButton = new AveryJButton(lumberPlayerGetButton1);
-        coalPlayerGetButton = new AveryJButton(coalPlayerGetButton1);
-        cattlePlayerGetButton = new AveryJButton(cattlePlayerGetButton1);
-        wheatPlayerGetButton = new AveryJButton(wheatPlayerGetButton1);
-        orePlayerGetButton = new AveryJButton(orePlayerGetButton1);
-        goldPlayerGetButton = new AveryJButton(goldPlayerGetButton1);
+        clearGetButton = new AvaJButton(clearGetButton1);
+        clearGiveButton = new AvaJButton(clearGiveButton1);
+        lumberPlayerGiveButton = new AvaJButton(lumberPlayerGiveButton1);
+        coalPlayerGiveButton = new AvaJButton(coalPlayerGiveButton1);
+        cattlePlayerGiveButton = new AvaJButton(cattlePlayerGiveButton1);
+        wheatPlayerGiveButton = new AvaJButton(wheatPlayerGiveButton1);
+        orePlayerGiveButton = new AvaJButton(orePlayerGiveButton1);
+        goldPlayerGiveButton = new AvaJButton(goldPlayerGiveButton1);
+        lumberPlayerGetButton = new AvaJButton(lumberPlayerGetButton1);
+        coalPlayerGetButton = new AvaJButton(coalPlayerGetButton1);
+        cattlePlayerGetButton = new AvaJButton(cattlePlayerGetButton1);
+        wheatPlayerGetButton = new AvaJButton(wheatPlayerGetButton1);
+        orePlayerGetButton = new AvaJButton(orePlayerGetButton1);
+        goldPlayerGetButton = new AvaJButton(goldPlayerGetButton1);
         goldBankGetButton.setIcon(gold);
         goldBankGiveButton.setIcon(gold);
         goldPlayerGetButton.setIcon(gold);
         goldPlayerGiveButton.setIcon(gold);
         jLabel8.setVisible(false);
         jLabel9.setVisible(false);
-        xButton = new AveryJButton(xButton1);
+        xButton = new AvaJButton(xButton1);
         bankTradePanel.setVisible(true);
         playerTradePanel.setVisible(false);
         jLabel10.setVisible(false);

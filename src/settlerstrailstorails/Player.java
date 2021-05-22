@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 /**
  *
- * @author Avery Thorn
+ * @author Ava Thorn
  */
 class Player {
     enum Color {WHITE,ORANGE,RED,GREEN;

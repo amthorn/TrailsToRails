@@ -39,7 +39,7 @@ public class SettlersConfirmDialog extends javax.swing.JFrame {
     customMapWindow cmw;
     Player currPlayer,winnerPlayer;
     buildWindow bw;
-    AveryJButton yesButtonTrain,noButtonTrain,okayButtonWinner,
+    AvaJButton yesButtonTrain,noButtonTrain,okayButtonWinner,
             notEnoughGoldButton,dpCardButton,noCardsButton,alreadyPlayedDPButton,
             scoutChoiceSettlerButton,scoutChoiceGoldButton,nativeSupportButton,
             mustRollButton,cannotCloseButton,playerAcceptedTradeButton,
@@ -149,18 +149,18 @@ public class SettlersConfirmDialog extends javax.swing.JFrame {
         playerAcceptedTradePanel.setVisible(false);
         mustRollPanel.setVisible(false);
         cannotClosePanel.setVisible(false);
-        noAcceptedTradeButton = new AveryJButton(noAcceptedTradeButton1);
-        alreadyPlayedDPButton = new AveryJButton(alreadyPlayedDPButton1);
-        yesButtonTrain = new AveryJButton(yesButtonTrain1);
-        noButtonTrain = new AveryJButton(noButtonTrain1);
-        notEnoughGoldButton = new AveryJButton(notEnoughGoldButton1);
-        dpCardButton = new AveryJButton(okayButtonDPCard1);
-        noCardsButton = new AveryJButton(noCardsButton1);
-        nativeSupportButton = new AveryJButton(nativeSupportButton1);
-        mustRollButton = new AveryJButton(mustRollButton1);
-        cannotCloseButton = new AveryJButton(cannotCloseButton1);
-        selectResourceGiveButton = new AveryJButton(selectResourceGiveButton1);
-        selectResourceGetButton = new AveryJButton(selectResourceGetButton1);
+        noAcceptedTradeButton = new AvaJButton(noAcceptedTradeButton1);
+        alreadyPlayedDPButton = new AvaJButton(alreadyPlayedDPButton1);
+        yesButtonTrain = new AvaJButton(yesButtonTrain1);
+        noButtonTrain = new AvaJButton(noButtonTrain1);
+        notEnoughGoldButton = new AvaJButton(notEnoughGoldButton1);
+        dpCardButton = new AvaJButton(okayButtonDPCard1);
+        noCardsButton = new AvaJButton(noCardsButton1);
+        nativeSupportButton = new AvaJButton(nativeSupportButton1);
+        mustRollButton = new AvaJButton(mustRollButton1);
+        cannotCloseButton = new AvaJButton(cannotCloseButton1);
+        selectResourceGiveButton = new AvaJButton(selectResourceGiveButton1);
+        selectResourceGetButton = new AvaJButton(selectResourceGetButton1);
         
         //choose a case to display
         switch(i){
@@ -383,8 +383,8 @@ public class SettlersConfirmDialog extends javax.swing.JFrame {
         notEnoughGoldPanel.setVisible(false);
         dpCardPanel.setVisible(false);
         noCardsPanel.setVisible(false);
-        yesButtonTrain = new AveryJButton(yesButtonTrain1);
-        noButtonTrain = new AveryJButton(noButtonTrain1);
+        yesButtonTrain = new AvaJButton(yesButtonTrain1);
+        noButtonTrain = new AvaJButton(noButtonTrain1);
 
         //choose a case to display
         switch (i) {
@@ -470,7 +470,7 @@ public class SettlersConfirmDialog extends javax.swing.JFrame {
         notEnoughGoldPanel.setVisible(false);
         dpCardPanel.setVisible(false);
         noCardsPanel.setVisible(false);
-        okayButtonWinner = new AveryJButton(okayButtonWinner1);
+        okayButtonWinner = new AvaJButton(okayButtonWinner1);
     }
     SettlersConfirmDialog(developmentCardWindow dcw, buildWindow bw, DevelopmentCard d, gameFrame g) {
         this.bw=bw;
@@ -512,9 +512,9 @@ public class SettlersConfirmDialog extends javax.swing.JFrame {
         dpCardPanel.setVisible(false);
         noCardsPanel.setVisible(false);
         scoutCardChoicePanel.setVisible(true);
-        scoutChoiceSettlerButton = new AveryJButton(scoutChoiceSettlerButton1);
-        scoutChoiceGoldButton = new AveryJButton(scoutChoiceGoldButton1);
-        okayButtonWinner = new AveryJButton(okayButtonWinner1);
+        scoutChoiceSettlerButton = new AvaJButton(scoutChoiceSettlerButton1);
+        scoutChoiceGoldButton = new AvaJButton(scoutChoiceGoldButton1);
+        okayButtonWinner = new AvaJButton(okayButtonWinner1);
     }
     SettlersConfirmDialog(Player p){       
         initComponents();
@@ -552,7 +552,7 @@ public class SettlersConfirmDialog extends javax.swing.JFrame {
         scoutCardChoicePanel.setVisible(false);
         selectResourceGivePanel.setVisible(false);
         selectResourceGetPanel.setVisible(false);
-        playerAcceptedTradeButton = new AveryJButton(playerAcceptedTradeButton1);
+        playerAcceptedTradeButton = new AvaJButton(playerAcceptedTradeButton1);
         playerAcceptedTradeLabel.setText(p.getName()+" has accepted your trade");
     }
     public SettlersConfirmDialog() {

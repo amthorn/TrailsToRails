@@ -75,7 +75,7 @@ class gameFrame extends javax.swing.JFrame{
             buildingTrain,buildTwoRails=false,rolled,movingRobber,doubleGold,
             setupPhase=false,selectDiceRolls=false,doneRollingForFirst,
             ignoreExtraordinaryBuildingPhase,disableCityButtons;
-    private AveryJButton optionsButton,buildButton,exitButton,buildCityButton,
+    private AvaJButton optionsButton,buildButton,exitButton,buildCityButton,
             cancelButton,cheatSeeHandButton,redInfoButton,whiteInfoButton,
             greenInfoButton,orangeInfoButton,seeAllButton,endTurnButton,
             utilitiesButton,tradeButton,rollButton,developmentCardButton,
@@ -170,21 +170,21 @@ class gameFrame extends javax.swing.JFrame{
         
         initComponents();
         //menu buttons
-        buildButton = new AveryJButton(buildButton1);
-        exitButton = new AveryJButton(exitButton1);
-        buildCityButton = new AveryJButton(buildCityButton1);
-        cancelButton = new AveryJButton(cancelButton1);
-        redInfoButton = new AveryJButton(redInfoButton1);
-        whiteInfoButton = new AveryJButton(whiteInfoButton1);
-        greenInfoButton = new AveryJButton(greenInfoButton1);
-        orangeInfoButton = new AveryJButton(orangeInfoButton1);
-        seeAllButton = new AveryJButton(seeAllButton1);
-        optionsButton = new AveryJButton(optionsButton1);
-        endTurnButton = new AveryJButton(endTurnButton1);
-        utilitiesButton = new AveryJButton(utilitiesButton1);
-        tradeButton = new AveryJButton(tradeButton1);
-        rollButton = new AveryJButton(rollButton1);
-        buildingCostsButton = new AveryJButton(buildingCostButton1);
+        buildButton = new AvaJButton(buildButton1);
+        exitButton = new AvaJButton(exitButton1);
+        buildCityButton = new AvaJButton(buildCityButton1);
+        cancelButton = new AvaJButton(cancelButton1);
+        redInfoButton = new AvaJButton(redInfoButton1);
+        whiteInfoButton = new AvaJButton(whiteInfoButton1);
+        greenInfoButton = new AvaJButton(greenInfoButton1);
+        orangeInfoButton = new AvaJButton(orangeInfoButton1);
+        seeAllButton = new AvaJButton(seeAllButton1);
+        optionsButton = new AvaJButton(optionsButton1);
+        endTurnButton = new AvaJButton(endTurnButton1);
+        utilitiesButton = new AvaJButton(utilitiesButton1);
+        tradeButton = new AvaJButton(tradeButton1);
+        rollButton = new AvaJButton(rollButton1);
+        buildingCostsButton = new AvaJButton(buildingCostButton1);
         try{
             setIconImage(ImageIO.read(getClass().getResource("/settlerstrailstorails/resources/icon.png")));
         }catch(Exception e){
@@ -3183,7 +3183,7 @@ class gameFrame extends javax.swing.JFrame{
         rail[90].setFreeRail(true);
         rail[88].setFreeRail(true);
         rail[85].setFreeRail(true);   
-        developmentCardButton = new AveryJButton(developmentCardButton1);
+        developmentCardButton = new AvaJButton(developmentCardButton1);
         developmentCardButton.setVisible(false);
         for(int i=0;i<hex.length;i++){
             hex[i].getHexButton().setVisible(false);
@@ -4608,7 +4608,7 @@ class gameFrame extends javax.swing.JFrame{
     public int getExtraordinaryBuildingPhaseNum(){
         return extraordinaryBuildingPhaseNum;
     }
-    public AveryJButton getCancelButton(){
+    public AvaJButton getCancelButton(){
         return cancelButton;
     }
     public ArrayList<Hex> getSingleQHexes(){

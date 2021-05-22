@@ -32,7 +32,7 @@ class CityInfoDialog extends javax.swing.JFrame {
     Player owner=null;
     CityHex city;
     gameFrame game_Frame;    
-    AveryJButton deliverGoods;
+    AvaJButton deliverGoods;
     CityInfoDialog(Player.Color c,gameFrame g) {
         initComponents();
         try{
@@ -40,7 +40,7 @@ class CityInfoDialog extends javax.swing.JFrame {
         }catch(Exception e){
             
         }
-        deliverGoods = new AveryJButton(deliverGoods1);
+        deliverGoods = new AvaJButton(deliverGoods1);
         deliverGoods.setVisible(false);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
@@ -58,7 +58,7 @@ class CityInfoDialog extends javax.swing.JFrame {
             
         }
         playerInfoButton.setVisible(false);
-        deliverGoods = new AveryJButton(deliverGoods1);
+        deliverGoods = new AvaJButton(deliverGoods1);
         deliverGoods.setVisible(false);
         game_Frame=g;
     }

@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
  */
 public class MineralRightsWindow extends javax.swing.JFrame {
 
-    AveryJButton lumberButton,oreButton,coalButton,wheatButton,cattleButton;
+    AvaJButton lumberButton,oreButton,coalButton,wheatButton,cattleButton;
     gameFrame game_Frame;
     boolean secondResource;
     /** Creates new form MineralRightsWindow */
@@ -33,11 +33,11 @@ public class MineralRightsWindow extends javax.swing.JFrame {
         }catch(Exception e){
             
         }
-        lumberButton = new AveryJButton(lumberButton1);
-        oreButton = new AveryJButton(oreButton1);
-        coalButton = new AveryJButton(coalButton1);
-        wheatButton = new AveryJButton(wheatButton1);
-        cattleButton = new AveryJButton(cattleButton1);
+        lumberButton = new AvaJButton(lumberButton1);
+        oreButton = new AvaJButton(oreButton1);
+        coalButton = new AvaJButton(coalButton1);
+        wheatButton = new AvaJButton(wheatButton1);
+        cattleButton = new AvaJButton(cattleButton1);
         game_Frame=g;
     }
     MineralRightsWindow(){

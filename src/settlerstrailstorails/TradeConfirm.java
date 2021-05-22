@@ -28,7 +28,7 @@ public class TradeConfirm extends javax.swing.JFrame {
     
     Player them,you;    
     ArrayList<Player> playersLeft;
-    AveryJButton rejectButton,acceptButton;
+    AvaJButton rejectButton,acceptButton;
     int lumberGet,lumberGive,coalGet,coalGive,cattleGet,cattleGive,
             oreGet,oreGive,wheatGive,wheatGet,goldGive,goldGet;
     gameFrame game_Frame;
@@ -66,8 +66,8 @@ public class TradeConfirm extends javax.swing.JFrame {
         ImageIcon orangeHouse= new ImageIcon(makeColorTransparent("/settlerstrailstorails/resources/orangeHouse.png", Color.WHITE));
         ImageIcon greenHouse= new ImageIcon(makeColorTransparent("/settlerstrailstorails/resources/greenHouse.png", Color.WHITE));
         ImageIcon whiteHouse= new ImageIcon(makeColorTransparent("/settlerstrailstorails/resources/whiteHouse.png", Color.WHITE));
-        rejectButton = new AveryJButton(rejectButton1);
-        acceptButton = new AveryJButton(acceptButton1);
+        rejectButton = new AvaJButton(rejectButton1);
+        acceptButton = new AvaJButton(acceptButton1);
         topLabel.setText(them.getName()+" is offering a trade");
         if(them.getColor() == Player.Color.WHITE) {
             themColorLabel.setIcon(whiteHouse);

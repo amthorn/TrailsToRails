@@ -41,7 +41,7 @@ public class buildWindow extends javax.swing.JFrame {
             mouseOnBuildOkayButton,extraordinaryBuildingPhase;
     gameFrame game_Frame;
     SettlersConfirmDialog scd;
-    AveryJButton buildTrainButton, buildMoveTrainButton,buildDPCardButton,
+    AvaJButton buildTrainButton, buildMoveTrainButton,buildDPCardButton,
             playDPCardButton;
     developmentCardWindow dpcw = new developmentCardWindow();
 
@@ -69,10 +69,10 @@ public class buildWindow extends javax.swing.JFrame {
         makeColorTransparent("/settlerstrailstorails/resources/whiteTrain.png", Color.WHITE));
         currPlayer=p;
         initComponents();
-        buildTrainButton=new AveryJButton(buildTrainButton1);
-        buildMoveTrainButton=new AveryJButton(buildMoveTrainButton1);
-        buildDPCardButton=new AveryJButton(buildDPCardButton1);
-        playDPCardButton=new AveryJButton(playDPCardButton1);
+        buildTrainButton=new AvaJButton(buildTrainButton1);
+        buildMoveTrainButton=new AvaJButton(buildMoveTrainButton1);
+        buildDPCardButton=new AvaJButton(buildDPCardButton1);
+        playDPCardButton=new AvaJButton(playDPCardButton1);
         if(p.getLumber()<1 || p.getOre()<1){
             buildRailButton.setEnabled(false);
         }
@@ -166,10 +166,10 @@ public class buildWindow extends javax.swing.JFrame {
         makeColorTransparent("/settlerstrailstorails/resources/whiteTrain.png", Color.WHITE));
         currPlayer=p;
         initComponents();
-        buildTrainButton=new AveryJButton(buildTrainButton1);
-        buildMoveTrainButton=new AveryJButton(buildMoveTrainButton1);
-        buildDPCardButton=new AveryJButton(buildDPCardButton1);
-        playDPCardButton=new AveryJButton(playDPCardButton1);
+        buildTrainButton=new AvaJButton(buildTrainButton1);
+        buildMoveTrainButton=new AvaJButton(buildMoveTrainButton1);
+        buildDPCardButton=new AvaJButton(buildDPCardButton1);
+        playDPCardButton=new AvaJButton(playDPCardButton1);
         buildMoveSettlerButton.setEnabled(false);
         buildMoveTrainButton.setEnabled(false);
         playDPCardButton.setEnabled(false);

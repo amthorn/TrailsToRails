@@ -22,7 +22,7 @@ import javax.imageio.ImageIO;
 public class ChoosePlayerSteal extends javax.swing.JFrame {
     
     ArrayList<Player> stealPlayers;
-    AveryJButton player1Info2PlrButton,player1Slct2PlrButton,player2Info2PlrButton,
+    AvaJButton player1Info2PlrButton,player1Slct2PlrButton,player2Info2PlrButton,
             player2Slct2PlrButton,player1Info3PlrButton,player1Slct3PlrButton,
             player2Info3PlrButton,player2Slct3PlrButton,player3Info3PlrButton,
             player3Slct3PlrButton;
@@ -48,20 +48,20 @@ public class ChoosePlayerSteal extends javax.swing.JFrame {
             playerOne3pLabel.setText(p.get(0).getName());
             playerTwo3pLabel.setText(p.get(1).getName());
             playerThree3pLabel.setText(p.get(2).getName());
-            player1Info3PlrButton=new AveryJButton(player1Info3PlrButton1);
-            player1Slct3PlrButton=new AveryJButton(player1Slct3PlrButton1);
-            player2Info3PlrButton=new AveryJButton(player2Info3PlrButton1);
-            player2Slct3PlrButton=new AveryJButton(player2Slct3PlrButton1);
-            player3Info3PlrButton=new AveryJButton(player3Info3PlrButton1);
-            player3Slct3PlrButton=new AveryJButton(player3Slct3PlrButton1);
+            player1Info3PlrButton=new AvaJButton(player1Info3PlrButton1);
+            player1Slct3PlrButton=new AvaJButton(player1Slct3PlrButton1);
+            player2Info3PlrButton=new AvaJButton(player2Info3PlrButton1);
+            player2Slct3PlrButton=new AvaJButton(player2Slct3PlrButton1);
+            player3Info3PlrButton=new AvaJButton(player3Info3PlrButton1);
+            player3Slct3PlrButton=new AvaJButton(player3Slct3PlrButton1);
         }else if(p.size()==2){
             twoPlayerPanel.setVisible(true);
             playerOne2pLabel.setText(p.get(0).getName());
             playerTwo2pLabel.setText(p.get(1).getName());
-            player1Info2PlrButton=new AveryJButton(player1Info2PlrButton1);
-            player1Slct2PlrButton=new AveryJButton(player1Slct2PlrButton1);
-            player2Info2PlrButton=new AveryJButton(player2Info2PlrButton1);
-            player2Slct2PlrButton=new AveryJButton(player2Slct2PlrButton1);
+            player1Info2PlrButton=new AvaJButton(player1Info2PlrButton1);
+            player1Slct2PlrButton=new AvaJButton(player1Slct2PlrButton1);
+            player2Info2PlrButton=new AvaJButton(player2Info2PlrButton1);
+            player2Slct2PlrButton=new AvaJButton(player2Slct2PlrButton1);
         }
     }
     public ChoosePlayerSteal(){

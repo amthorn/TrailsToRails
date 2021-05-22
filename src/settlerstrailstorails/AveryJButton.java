@@ -6,12 +6,12 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
 
-class AveryJButton extends JButton {
+class AvaJButton extends JButton {
     
     JButton button;
     boolean able;
 
-    AveryJButton(JButton b){
+    AvaJButton(JButton b){
         button = b;
         button.setEnabled(true);
         button.setVisible(true);

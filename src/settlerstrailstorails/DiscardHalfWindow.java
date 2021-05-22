@@ -21,7 +21,7 @@ import javax.imageio.ImageIO;
  */
 public class DiscardHalfWindow extends javax.swing.JFrame {
     
-    AveryJButton lumberButton,coalButton,cattleButton,oreButton,wheatButton;
+    AvaJButton lumberButton,coalButton,cattleButton,oreButton,wheatButton;
     int discardNum;
     Player p;
     ArrayList<Player> discardPlayers;
@@ -41,11 +41,11 @@ public class DiscardHalfWindow extends javax.swing.JFrame {
         }
         discardNum=num;
         this.p=p;
-        coalButton = new AveryJButton(coalButton1);
-        lumberButton = new AveryJButton(lumberButton1);
-        cattleButton = new AveryJButton(cattleButton1);
-        oreButton = new AveryJButton(oreButton1);
-        wheatButton = new AveryJButton(wheatButton1);
+        coalButton = new AvaJButton(coalButton1);
+        lumberButton = new AvaJButton(lumberButton1);
+        cattleButton = new AvaJButton(cattleButton1);
+        oreButton = new AvaJButton(oreButton1);
+        wheatButton = new AvaJButton(wheatButton1);
         if(p.getLumber()<1){
             lumberButton.setVisible(false);
         }
