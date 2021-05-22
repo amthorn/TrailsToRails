@@ -1,0 +1,739 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*
+ * customMapWindow.java
+ *
+ * Created on Oct 5, 2013, 1:46:51 AM
+ */
+package settlerstrailstorails;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.border.BevelBorder;
+
+/**
+ *
+ * @author User 1
+ */
+public class customMapWindow extends javax.swing.JFrame {
+    
+    ImageIcon nineChit,tenChit,elevenChit,doubleQChit;
+    MainFrame mf;
+    boolean mouseOnBackButton,buttonPressed,mouseOnSaveButton,
+            mouseOnClearChitsButton;
+    ArrayList<Integer> chits=new ArrayList<Integer>();
+    SettlersConfirmDialog scd;
+    JButton nextChit;
+    int hexNum=-1;
+    JButton[] hexes = new JButton[12];
+    int[] chitsTemp=new int[12];
+    boolean ninesFull,tensFull,elevensFull;
+
+    /** Creates new form customMapWindow */
+    public customMapWindow(MainFrame mf, ArrayList<Integer> chits) {
+        initComponents();
+        hexes[0] = hexButtonOne;
+        hexes[1] = hexButtonThree;
+        hexes[2] = hexButtonTwo;
+        hexes[3] = hexButtonFour;
+        hexes[4] = hexButtonSix;
+        hexes[5] = hexButtonFive;
+        hexes[6] = hexButtonSeven;
+        hexes[7] = hexButtonEight;
+        hexes[8] = hexButtonNine;
+        hexes[9] = hexButtonTen;
+        hexes[10] = hexButtonEleven;
+        hexes[11]=hexButtonTwelve;
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        try{
+            setIconImage(ImageIO.read(getClass().getResource("/settlerstrailstorails/resources/icon.png")));
+        }catch(Exception e){
+            
+        }
+        this.mf=mf;
+        if(chits!=null){
+            ImageIcon nine=null, ten=null, eleven=null;
+            try{
+                nine=new ImageIcon(ImageIO.read(getClass().getResource(
+                            "/settlerstrailstorails/resources/9Chit.png")));
+                ten=new ImageIcon(ImageIO.read(getClass().getResource(
+                            "/settlerstrailstorails/resources/10Chit.png")));
+                eleven=new ImageIcon(ImageIO.read(getClass().getResource(
+                            "/settlerstrailstorails/resources/11Chit.png")));
+            }catch (IOException e){
+                
+            }
+            for(int i=0;i<chits.size();i++){
+                if(chits.get(i)==9){
+                    hexes[i].setIcon(nine);
+                }
+                if(chits.get(i)==10){
+                    hexes[i].setIcon(ten);
+                }
+                if(chits.get(i)==11){
+                    hexes[i].setIcon(eleven);
+                }
+            }
+        }
+    }
+    public customMapWindow() {
+        initComponents();
+    }
+    public void addChit(int c){
+        if(c==9 && ninesFull) {
+            //you can only have four nines
+            scd = new SettlersConfirmDialog(8, this);
+            scd.setVisible(true);
+            return;
+        }
+        if(c==10 && tensFull){
+            //you can only have four tens
+            scd = new SettlersConfirmDialog(8, this);
+            scd.setVisible(true);
+            return;
+        }
+        if(c==11 && elevensFull){
+            //you can only have four elevens
+            scd = new SettlersConfirmDialog(8, this);
+            scd.setVisible(true);
+            return;
+        }
+        chitsTemp[hexNum]=c;
+        try{
+            switch (c) {
+                case 9:
+                    nextChit.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(
+                            "/settlerstrailstorails/resources/9Chit.png"))));
+                    break;
+                case 10:
+                    nextChit.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(
+                            "/settlerstrailstorails/resources/10Chit.png"))));
+                    break;
+                case 11:
+                    nextChit.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(
+                            "/settlerstrailstorails/resources/11Chit.png"))));
+                    break;
+            }
+        }catch (IOException e){
+            
+        }
+        int nine=0,ten=0,eleven=0;
+        for(int i=0;i<chitsTemp.length;i++){
+            if(chitsTemp[i]==9)nine++;
+            if(chitsTemp[i]==10)ten++;
+            if(chitsTemp[i]==11)eleven++;
+            if(ten==4)tensFull=true;
+            if(eleven==4)elevensFull=true;
+            if(nine==4)ninesFull=true;
+        }
+    }
+
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        mainPanel = new javax.swing.JPanel();
+        doubleQOne = new javax.swing.JLabel();
+        doubleQOne1 = new javax.swing.JLabel();
+        doubleQOne2 = new javax.swing.JLabel();
+        doubleQOne3 = new javax.swing.JLabel();
+        doubleQOne4 = new javax.swing.JLabel();
+        doubleQOne5 = new javax.swing.JLabel();
+        doubleQOne6 = new javax.swing.JLabel();
+        doubleQOne7 = new javax.swing.JLabel();
+        doubleQOne8 = new javax.swing.JLabel();
+        doubleQOne9 = new javax.swing.JLabel();
+        doubleQOne10 = new javax.swing.JLabel();
+        doubleQOne11 = new javax.swing.JLabel();
+        doubleQOne12 = new javax.swing.JLabel();
+        doubleQOne13 = new javax.swing.JLabel();
+        topLabel = new javax.swing.JLabel();
+        secondLabel = new javax.swing.JLabel();
+        hexButtonOne = new javax.swing.JButton();
+        hexButtonTwo = new javax.swing.JButton();
+        hexButtonThree = new javax.swing.JButton();
+        hexButtonFour = new javax.swing.JButton();
+        hexButtonFive = new javax.swing.JButton();
+        hexButtonSix = new javax.swing.JButton();
+        hexButtonSeven = new javax.swing.JButton();
+        hexButtonEight = new javax.swing.JButton();
+        hexButtonNine = new javax.swing.JButton();
+        hexButtonTen = new javax.swing.JButton();
+        hexButtonEleven = new javax.swing.JButton();
+        hexButtonTwelve = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
+        saveButton = new javax.swing.JButton();
+        clearChitsButton = new javax.swing.JButton();
+        backgroundLabel = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        doubleQOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 155, -1, -1));
+
+        doubleQOne1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 235, -1, -1));
+
+        doubleQOne2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 316, -1, -1));
+
+        doubleQOne3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 478, -1, -1));
+
+        doubleQOne4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 276, -1, -1));
+
+        doubleQOne5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne5, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 155, -1, -1));
+
+        doubleQOne6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne6, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 316, -1, -1));
+
+        doubleQOne7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne7, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 437, -1, -1));
+
+        doubleQOne8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne8, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 154, -1, -1));
+
+        doubleQOne9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne9, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 316, -1, -1));
+
+        doubleQOne10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne10, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 480, -1, -1));
+
+        doubleQOne11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 559, -1, -1));
+
+        doubleQOne12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne12, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 276, -1, -1));
+
+        doubleQOne13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/doubleQuestionChit.png"))); // NOI18N
+        mainPanel.add(doubleQOne13, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 481, -1, -1));
+
+        topLabel.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24));
+        topLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        topLabel.setText("Click on a hex to set the chit.");
+        mainPanel.add(topLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 20, 1020, -1));
+
+        secondLabel.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14));
+        secondLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        secondLabel.setText("(You can only change the blank chits)");
+        mainPanel.add(secondLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 50, 1020, -1));
+
+        hexButtonOne.setBorderPainted(false);
+        hexButtonOne.setContentAreaFilled(false);
+        hexButtonOne.setFocusable(false);
+        hexButtonOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonOneActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(884, 305, 50, 40));
+
+        hexButtonTwo.setBorderPainted(false);
+        hexButtonTwo.setContentAreaFilled(false);
+        hexButtonTwo.setFocusable(false);
+        hexButtonTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonTwoActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 181, 50, 40));
+
+        hexButtonThree.setBorderPainted(false);
+        hexButtonThree.setContentAreaFilled(false);
+        hexButtonThree.setFocusable(false);
+        hexButtonThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonThreeActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(812, 425, 50, 40));
+
+        hexButtonFour.setBorderPainted(false);
+        hexButtonFour.setContentAreaFilled(false);
+        hexButtonFour.setFocusable(false);
+        hexButtonFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonFourActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 303, 50, 40));
+
+        hexButtonFive.setBorderPainted(false);
+        hexButtonFive.setContentAreaFilled(false);
+        hexButtonFive.setFocusable(false);
+        hexButtonFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonFiveActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 183, 50, 40));
+
+        hexButtonSix.setBorderPainted(false);
+        hexButtonSix.setContentAreaFilled(false);
+        hexButtonSix.setFocusable(false);
+        hexButtonSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonSixActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 422, 50, 40));
+
+        hexButtonSeven.setBorderPainted(false);
+        hexButtonSeven.setContentAreaFilled(false);
+        hexButtonSeven.setFocusable(false);
+        hexButtonSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonSevenActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 224, 50, 40));
+
+        hexButtonEight.setBorderPainted(false);
+        hexButtonEight.setContentAreaFilled(false);
+        hexButtonEight.setFocusable(false);
+        hexButtonEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonEightActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 383, 50, 40));
+
+        hexButtonNine.setBorderPainted(false);
+        hexButtonNine.setContentAreaFilled(false);
+        hexButtonNine.setFocusable(false);
+        hexButtonNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonNineActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 507, 50, 40));
+
+        hexButtonTen.setBorderPainted(false);
+        hexButtonTen.setContentAreaFilled(false);
+        hexButtonTen.setFocusable(false);
+        hexButtonTen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonTenActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 141, 50, 40));
+
+        hexButtonEleven.setBorderPainted(false);
+        hexButtonEleven.setContentAreaFilled(false);
+        hexButtonEleven.setFocusable(false);
+        hexButtonEleven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonElevenActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonEleven, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 306, 50, 40));
+
+        hexButtonTwelve.setBorderPainted(false);
+        hexButtonTwelve.setContentAreaFilled(false);
+        hexButtonTwelve.setFocusable(false);
+        hexButtonTwelve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hexButtonTwelveActionPerformed(evt);
+            }
+        });
+        mainPanel.add(hexButtonTwelve, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 388, 50, 40));
+
+        backButton.setBackground(new java.awt.Color(239, 228, 176));
+        backButton.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24));
+        backButton.setText("Back");
+        backButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backButton.setContentAreaFilled(false);
+        backButton.setFocusable(false);
+        backButton.setOpaque(true);
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backButtonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                backButtonMouseReleased(evt);
+            }
+        });
+        mainPanel.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 630, 160, 40));
+
+        saveButton.setBackground(new java.awt.Color(239, 228, 176));
+        saveButton.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24));
+        saveButton.setText("Save");
+        saveButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveButton.setContentAreaFilled(false);
+        saveButton.setFocusable(false);
+        saveButton.setOpaque(true);
+        saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                saveButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                saveButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                saveButtonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                saveButtonMouseReleased(evt);
+            }
+        });
+        mainPanel.add(saveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 630, 160, 40));
+
+        clearChitsButton.setBackground(new java.awt.Color(239, 228, 176));
+        clearChitsButton.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24));
+        clearChitsButton.setText("Clear Chits");
+        clearChitsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clearChitsButton.setContentAreaFilled(false);
+        clearChitsButton.setFocusable(false);
+        clearChitsButton.setOpaque(true);
+        clearChitsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clearChitsButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clearChitsButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                clearChitsButtonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                clearChitsButtonMouseReleased(evt);
+            }
+        });
+        mainPanel.add(clearChitsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 160, 40));
+
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settlerstrailstorails/resources/blankBoardDark.png"))); // NOI18N
+        mainPanel.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1025, 702));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseEntered
+        mouseOnBackButton=true;
+}//GEN-LAST:event_backButtonMouseEntered
+    private void backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseExited
+        if(mouseOnBackButton&&buttonPressed){
+            backButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+            backButton.setLocation(backButton.getX() + 1, backButton.getY());
+        }
+        mouseOnBackButton=false;
+        buttonPressed=false;
+}//GEN-LAST:event_backButtonMouseExited
+    private void backButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMousePressed
+        gameFrame.playSound("click");
+        backButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
+        backButton.setLocation(backButton.getX()-1, backButton.getY());
+        buttonPressed=true;
+}//GEN-LAST:event_backButtonMousePressed
+    private void backButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseReleased
+        buttonPressed=false;
+        if(mouseOnBackButton) {
+            backButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+            backButton.setLocation(backButton.getX() + 1, backButton.getY());
+            this.setVisible(false);
+            mf.setVisible(true);
+        }
+}//GEN-LAST:event_backButtonMouseReleased
+    private void saveButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseEntered
+        mouseOnSaveButton=true;
+}//GEN-LAST:event_saveButtonMouseEntered
+    private void saveButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseExited
+        if(mouseOnSaveButton&&buttonPressed){
+            saveButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+            saveButton.setLocation(saveButton.getX() + 1, saveButton.getY());
+        }
+        mouseOnSaveButton=false;
+        buttonPressed=false;
+}//GEN-LAST:event_saveButtonMouseExited
+    private void saveButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMousePressed
+        gameFrame.playSound("click");
+        saveButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
+        saveButton.setLocation(saveButton.getX()-1, saveButton.getY());
+        buttonPressed=true;
+}//GEN-LAST:event_saveButtonMousePressed
+    private void saveButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseReleased
+        buttonPressed=false;
+        if(mouseOnSaveButton) {
+            saveButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+            saveButton.setLocation(saveButton.getX() + 1, saveButton.getY());
+            if(scd!=null && scd.isVisible()){
+                scd.setVisible(false);
+            }
+            int nine = 0, ten = 0, eleven = 0;
+            for (int i = 0; i < chitsTemp.length; i++) {
+                if (chitsTemp[i] == 9) {
+                    nine++;
+                }
+                if (chitsTemp[i] == 10) {
+                    ten++;
+                }
+                if (chitsTemp[i] == 11) {
+                    eleven++;
+                }
+                if (nine == 4) {
+                    ninesFull = true;
+                }
+                if (ten == 4) {
+                    tensFull = true;
+                }
+                if (eleven == 4) {
+                    elevensFull = true;
+                }
+            }
+            if (nine != 0 || ten != 0 || eleven != 0) {
+                forLoop:
+                for (int i = 0; i < chitsTemp.length; i++) {
+                    if (chitsTemp[i] == 0) {
+                        if (!ninesFull) {
+                            chitsTemp[i] = 9;
+                            nine++;
+                            if (nine == 4) {
+                                ninesFull = true;
+                            }
+                            continue forLoop;
+                        }
+                        if (!tensFull) {
+                            chitsTemp[i] = 10;
+                            ten++;
+                            if (ten == 4) {
+                                tensFull = true;
+                            }
+                            continue forLoop;
+                        }
+                        if (!elevensFull) {
+                            chitsTemp[i] = 11;
+                            eleven++;
+                            if (eleven == 4) {
+                                elevensFull = true;
+                            }
+                            continue forLoop;
+                        }
+                    }
+                }
+                for (int i = 0; i < chitsTemp.length; i++) {
+                    chits.add(chitsTemp[i]);
+                }
+                scd = new SettlersConfirmDialog(chits, mf, 6, this);
+                scd.setVisible(true);
+            } else {
+                scd=new SettlersConfirmDialog(null,mf,6,this);
+                scd.setVisible(true);
+            }
+        }
+}//GEN-LAST:event_saveButtonMouseReleased
+
+    private void hexButtonOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonOneActionPerformed
+        nextChit=hexButtonOne;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=0;
+    }//GEN-LAST:event_hexButtonOneActionPerformed
+    private void hexButtonTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonTwoActionPerformed
+        nextChit=hexButtonTwo;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=2;
+    }//GEN-LAST:event_hexButtonTwoActionPerformed
+    private void hexButtonThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonThreeActionPerformed
+        nextChit=hexButtonThree;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=1;
+    }//GEN-LAST:event_hexButtonThreeActionPerformed
+    private void hexButtonFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonFourActionPerformed
+        nextChit=hexButtonFour;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=3;
+    }//GEN-LAST:event_hexButtonFourActionPerformed
+    private void hexButtonFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonFiveActionPerformed
+        nextChit=hexButtonFive;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=5;
+    }//GEN-LAST:event_hexButtonFiveActionPerformed
+    private void hexButtonSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonSixActionPerformed
+        nextChit=hexButtonSix;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=4;
+    }//GEN-LAST:event_hexButtonSixActionPerformed
+    private void hexButtonSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonSevenActionPerformed
+        nextChit=hexButtonSeven;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=6;
+    }//GEN-LAST:event_hexButtonSevenActionPerformed
+    private void hexButtonEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonEightActionPerformed
+        nextChit=hexButtonEight;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=7;
+    }//GEN-LAST:event_hexButtonEightActionPerformed
+    private void hexButtonNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonNineActionPerformed
+        nextChit=hexButtonNine;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=8;
+    }//GEN-LAST:event_hexButtonNineActionPerformed
+    private void hexButtonTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonTenActionPerformed
+        nextChit=hexButtonTen;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=9;
+    }//GEN-LAST:event_hexButtonTenActionPerformed
+    private void hexButtonElevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonElevenActionPerformed
+        nextChit=hexButtonEleven;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=10;
+    }//GEN-LAST:event_hexButtonElevenActionPerformed
+    private void hexButtonTwelveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexButtonTwelveActionPerformed
+        nextChit=hexButtonTwelve;
+        if(scd!=null && scd.isVisible()){
+            scd.setVisible(false);
+        }
+        scd=new SettlersConfirmDialog(7,this);
+        scd.setVisible(true);
+        hexNum=11;
+    }//GEN-LAST:event_hexButtonTwelveActionPerformed
+    private void clearChitsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearChitsButtonMouseEntered
+        mouseOnClearChitsButton=true;
+    }//GEN-LAST:event_clearChitsButtonMouseEntered
+    private void clearChitsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearChitsButtonMouseExited
+        if(mouseOnClearChitsButton&&buttonPressed){
+            clearChitsButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+            clearChitsButton.setLocation(clearChitsButton.getX() + 1, clearChitsButton.getY());
+        }
+        mouseOnClearChitsButton=false;
+        buttonPressed=false;
+    }//GEN-LAST:event_clearChitsButtonMouseExited
+    private void clearChitsButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearChitsButtonMousePressed
+        gameFrame.playSound("click");
+        clearChitsButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
+        clearChitsButton.setLocation(clearChitsButton.getX()-1, clearChitsButton.getY());
+        buttonPressed=true;
+    }//GEN-LAST:event_clearChitsButtonMousePressed
+    private void clearChitsButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearChitsButtonMouseReleased
+        buttonPressed=false;
+        if(mouseOnClearChitsButton) {
+            clearChitsButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+            clearChitsButton.setLocation(clearChitsButton.getX() + 1, clearChitsButton.getY());
+            chits=new ArrayList<Integer>();
+            for(int i=0;i<chitsTemp.length;i++){
+                chitsTemp[i]=0;
+            }
+            for(int i=0;i<hexes.length;i++){
+                hexes[i].setIcon(null);
+            }
+        }
+    }//GEN-LAST:event_clearChitsButtonMouseReleased
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new customMapWindow().setVisible(true);
+            }
+        });
+    }
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
+    private javax.swing.JLabel backgroundLabel;
+    private javax.swing.JButton clearChitsButton;
+    private javax.swing.JLabel doubleQOne;
+    private javax.swing.JLabel doubleQOne1;
+    private javax.swing.JLabel doubleQOne10;
+    private javax.swing.JLabel doubleQOne11;
+    private javax.swing.JLabel doubleQOne12;
+    private javax.swing.JLabel doubleQOne13;
+    private javax.swing.JLabel doubleQOne2;
+    private javax.swing.JLabel doubleQOne3;
+    private javax.swing.JLabel doubleQOne4;
+    private javax.swing.JLabel doubleQOne5;
+    private javax.swing.JLabel doubleQOne6;
+    private javax.swing.JLabel doubleQOne7;
+    private javax.swing.JLabel doubleQOne8;
+    private javax.swing.JLabel doubleQOne9;
+    private javax.swing.JButton hexButtonEight;
+    private javax.swing.JButton hexButtonEleven;
+    private javax.swing.JButton hexButtonFive;
+    private javax.swing.JButton hexButtonFour;
+    private javax.swing.JButton hexButtonNine;
+    private javax.swing.JButton hexButtonOne;
+    private javax.swing.JButton hexButtonSeven;
+    private javax.swing.JButton hexButtonSix;
+    private javax.swing.JButton hexButtonTen;
+    private javax.swing.JButton hexButtonThree;
+    private javax.swing.JButton hexButtonTwelve;
+    private javax.swing.JButton hexButtonTwo;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JLabel secondLabel;
+    private javax.swing.JLabel topLabel;
+    // End of variables declaration//GEN-END:variables
+}
